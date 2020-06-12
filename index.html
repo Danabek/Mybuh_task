@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mybuh bussines</title>
+    <link rel="stylesheet" href="assets/sass/style.css">
+    <link rel="stylesheet" href="assets/css/button.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- <div class="modal-expand-contact">
+        <div class="modal-expand-contact__content">
+            <header>
+                <div class="title">
+                    <h2 class="title">
+                        
+                        Изменить контакт
+                    </h2>
+                </div>
+                <div class="nav">
+                    
+                </div>
+            </header>
+            <div class="modal-expand-contact__content__body">
+
+            </div>
+        </div>
+    </div> -->
+    <div data-name="mb_employes" data-id="modal-edit" class="modal-edit-contact">
+        <div class="modal-edit-contact__content">
+            <header>
+                <div class="title">
+                    <h2 class="title">
+                        
+                        Изменить контакт
+                    </h2>
+                </div>
+                <div class="nav">
+                </div>
+            </header>
+            <div class="modal-edit-contact__content__body">
+                <fieldset class="material">
+                    <input type="text"  autocomplete="off" required>
+                    <hr>
+                    <label>Ф.И.О</label>
+                </fieldset>
+                <fieldset class="material">
+                    <input type="text"  autocomplete="off" required>
+                    <hr>
+                    <label>Должность</label>
+                </fieldset>
+                <fieldset class="material">
+                    <select type="text"  autocomplete="off" required>
+                        <option value="">Резидент</option>
+                        <option value="">Инвалид</option>
+                        <option value="">Иностранец</option>
+
+                    </select>
+                    <hr>
+                    <label>Статус</label>
+                </fieldset>
+                <div class="salary">
+                    <fieldset class="material">
+                        <input type="text"  autocomplete="off" required>
+                        <hr>
+                        <label>Оклад</label>
+                    </fieldset>
+                    <fieldset class="material">
+                        <input type="date"  autocomplete="off" required>
+                        <hr>
+                    </fieldset>
+
+                </div>
+
+            </div>
+
+            <footer class="modal-edit-contact__content__footer">
+                <button data-name="mb_employes" data-id="employee_cancel__btn" class="pure-material-button-text">Отмена</button>
+                <button data-name="mb_employes" data-id="employee_accept_btn" class="pure-material-button-outlined">Изменить</button>
+
+            </footer>
+        </div>
+    </div>
+
+
+
+    <header class="masterhead">
+        <div class="logo">
+            <img src="https://mybuh.kz/media/image/logoMain.svg" alt="">
+        </div>
+    </header>
+    <main class="main">
+        <aside class="aside">
+            <button data-name="mb_employes" data-id="create" class="btn-primary">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="32" viewbox="0 0 24 24" width="32">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                    <path d="M0 0h24v24H0z" fill="none" /></svg>
+                Создать сотрудника
+            </button>
+            <nav>
+                <ul class="list">
+                    <li>
+                        <a class="active list-item" href="">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24" viewbox="0 0 24 24"
+                                width="24">
+                                <path
+                                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                <path d="M0 0h24v24H0z" fill="none" /></svg>
+                            Сотрудники
+                            <span data-name="mb_employes" class="employes_amount" data-id="employes_amount">
+
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <hr>
+                <ul class="list">
+                    <li>
+                        <button data-name="mb_employes" data-id="import" class="list-item btn" href="">
+                            <svg class="icon" width="24" height="24" viewbox="0 0 24 24">
+                                <path
+                                    d="M4 15h2v3h12v-3h2v3c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2m4.41-7.59L11 7.83V16h2V7.83l2.59 2.59L17 9l-5-5-5 5 1.41 1.41z">
+                                </path>
+                            </svg>Импорт
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <article class="content">
+            <section>
+                <table class="employes">
+                    <thead>
+                        <tr>
+                            <th class="text" scope="col">Имя</th>
+                            <th class="text" scope="col">Должность</th>
+                            <th class="text" scope="col">Статус</th>
+                            <th class="number" scope="col">Оклад</th>
+                          </tr>
+                    </thead>
+                    <tbody data-name="mb_employes" data-id="emp_list">
+                        <tr style="display: none;" data-name="mb_employes" data-id="employee">
+                            <td data-name="mb_employes" data-id="employee_name">
+                                <input name="name" disabled type="text" placeholder="Введите имя">
+                            </td>
+                            <td data-name="mb_employes" data-id="employee_post">
+                                <input name="post" disabled type="text" placeholder="Введите должность">
+                            </td>
+                            <td data-name="mb_employes" data-id="employee_status">
+                                <select name="status" disabled type="text" placeholder="Введите статус">
+                                    <option value="invalid">
+                                        Инвалид
+                                    </option>
+                                    <option value="pensioner">
+                                        Пенсионер
+                                    </option>
+                                    <option value="resident">
+                                        Резидент
+                                    </option>
+
+
+                                </select>
+                            </td>
+                            <td data-name="mb_employes" data-id="employee_salary">
+                                <input name="salary" disabled class="number" inputmode="numeric" pattern="[0-9]*" placeholder="Введите Оклад">
+                            </td>
+                            <td data-name="mb_employes" data-id="employee_edit">
+                                <button class="btn" data-name="mb_employes" data-id="employee_edit__btn">
+                                    <svg class="icon" width="20" height="20" viewbox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"></path></svg>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </article>
+    </main>
+    <script src="assets/js/index.js"></script>
+    <script>
+        mb_employes.init()
+    </script>
+</body>
+
+</html>

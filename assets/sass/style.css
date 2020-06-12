@@ -1,0 +1,469 @@
+.material {
+  position: relative;
+  padding: 0;
+  margin: 15px 5px;
+  border: none;
+  overflow: visible;
+}
+
+.material input, .material select {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  padding: 12px 10px 8px;
+  border: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-bottom: 1px solid #DDD;
+  font-size: 120%;
+  outline: none;
+  cursor: text;
+}
+
+.material input::-webkit-input-placeholder, .material select::-webkit-input-placeholder {
+  -webkit-transition: color 300ms ease;
+  transition: color 300ms ease;
+}
+
+.material input:not(:focus)::-webkit-input-placeholder, .material select:not(:focus)::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.material hr {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 2px;
+  border: none;
+  background: #607D8B;
+  font-size: 1px;
+  will-change: transform, visibility;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  visibility: hidden;
+  z-index: 10;
+}
+
+.material input:focus ~ hr, .material select:focus ~ hr {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  visibility: visible;
+}
+
+.material label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 120%;
+  color: #607D8B;
+  -webkit-transform-origin: 0 -150%;
+          transform-origin: 0 -150%;
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
+  pointer-events: none;
+}
+
+.material input:focus ~ label,
+.material input:valid ~ label,
+.material select:focus ~ label,
+.material select:valid ~ label,
+.material select:defined ~ label {
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+}
+
+.select {
+  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+  position: relative;
+  width: 350px;
+}
+
+.select-text {
+  position: relative;
+  font-family: inherit;
+  background-color: transparent;
+  width: 350px;
+  padding: 10px 10px 10px 0;
+  font-size: 18px;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* Remove focus */
+.select-text:focus {
+  outline: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+/* Use custom arrow */
+.select .select-text {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+}
+
+.select:after {
+  position: absolute;
+  top: 18px;
+  right: 10px;
+  /* Styling the down arrow */
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+}
+
+/* LABEL ======================================= */
+.select-label {
+  color: rgba(0, 0, 0, 0.26);
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 10px;
+  -webkit-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+
+/* active state */
+.select-text:focus ~ .select-label, .select-text:valid ~ .select-label {
+  color: #2F80ED;
+  top: -20px;
+  -webkit-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+  font-size: 14px;
+}
+
+/* BOTTOM BARS ================================= */
+.select-bar {
+  position: relative;
+  display: block;
+  width: 350px;
+}
+
+.select-bar:before, .select-bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #2F80ED;
+  -webkit-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+
+.select-bar:before {
+  left: 50%;
+}
+
+.select-bar:after {
+  right: 50%;
+}
+
+/* active state */
+.select-text:focus ~ .select-bar:before, .select-text:focus ~ .select-bar:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.select-highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+.masterhead {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 8px 16px;
+}
+
+.btn {
+  border: none;
+  display: block;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.btn-primary {
+  border: none;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
+          box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.8rem;
+  padding: 8px 10px;
+  border-radius: 55px;
+  margin: 16px auto;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.btn:hover {
+  opacity: 0.87;
+}
+
+.icon {
+  margin: 5px;
+}
+
+main {
+  position: relative;
+}
+
+.aside {
+  position: absolute;
+  height: calc(100vh - 100%);
+  top: 0;
+  bottom: 0;
+  width: 280px;
+  border-right: 1px solid #ccc;
+}
+
+.content {
+  margin-left: 280px;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list .list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  padding: 10px 26px;
+}
+
+.list .active {
+  background-color: rgba(227, 30, 37, 0.1);
+  color: rgba(227, 30, 37, 0.87);
+}
+
+.list .active svg {
+  fill: #e31e25;
+}
+
+table.employes {
+  width: 100%;
+}
+
+table.employes thead {
+  color: #5f6368;
+}
+
+table.employes thead th {
+  padding: 8px 16px;
+}
+
+table.employes select {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+table.employes select:disabled {
+  background-color: white;
+  border: none;
+}
+
+table.employes .text {
+  text-align: left;
+}
+
+table.employes .number {
+  text-align: right;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.collapsed {
+  display: none;
+}
+
+.salary {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+input[type="date"] {
+  display: block;
+  position: relative;
+  padding: 1rem 3.5rem .35rem 0.75rem;
+  font-size: 120%;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  border-bottom: 1px solid #DDD;
+  border-radius: 0.25rem;
+  background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='22' viewBox='0 0 20 22'%3E%3Cg fill='none' fill-rule='evenodd' stroke='%23688EBB' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' transform='translate(1 1)'%3E%3Crect width='18' height='18' y='2' rx='2'/%3E%3Cpath d='M13 0L13 4M5 0L5 4M0 8L18 8'/%3E%3C/g%3E%3C/svg%3E") right 1rem center no-repeat;
+  cursor: pointer;
+}
+
+input[type="date"]:focus {
+  outline: none;
+  border-color: #3acfff;
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(0, 120, 250, 0.1);
+          box-shadow: 0 0 0 0.25rem rgba(0, 120, 250, 0.1);
+}
+
+::-webkit-datetime-edit-month-field:hover,
+::-webkit-datetime-edit-day-field:hover,
+::-webkit-datetime-edit-year-field:hover {
+  background: rgba(0, 120, 250, 0.1);
+}
+
+::-webkit-datetime-edit-text {
+  opacity: 0;
+}
+
+::-webkit-clear-button,
+::-webkit-inner-spin-button {
+  display: none;
+}
+
+::-webkit-calendar-picker-indicator {
+  position: absolute;
+  width: 2.5rem;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  cursor: pointer;
+  color: #0078fa;
+  background: #0078fa;
+}
+
+input[type="date"]:hover::-webkit-calendar-picker-indicator {
+  opacity: 0.05;
+}
+
+input[type="date"]:hover::-webkit-calendar-picker-indicator:hover {
+  opacity: 0.15;
+}
+
+.employes_amount {
+  margin-left: auto;
+}
+
+.modal-edit-contact {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  position: absolute;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal-edit-contact__content {
+  max-width: 700px;
+  background-color: white;
+  border-radius: 25px;
+  width: 100%;
+  padding: 15px;
+}
+
+.modal-edit-contact__content__body {
+  padding: 30px 0;
+}
+
+.modal-edit-contact__content__body .salary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modal-edit-contact__content__body .salary fieldset {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.modal-edit-contact__content__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.modal-edit-contact__content header {
+  border-bottom: 1px solid #ccc;
+  padding: 15px 0;
+}
+
+.modal-edit-contact__content header .title h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.salary {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+}
+/*# sourceMappingURL=style.css.map */
